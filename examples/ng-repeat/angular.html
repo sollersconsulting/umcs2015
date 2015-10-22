@@ -1,0 +1,20 @@
+<script src="../angular.js"></script>
+
+<div data-ng-app="test" style="text-align:center; margin-top: 5em;">
+  <form data-ng-controller="testController">
+    <div ng-repeat="elem in elements">Name: {{elem.name}}, Age: {{elem.age}}</div>
+  </form>
+</div>
+
+<script>
+  angular.module('test', [])
+      .controller('testController', function ($scope) {
+        $scope.elements = [{
+          name: "Jan", age: 23
+        }, {
+          name: "Tomasz", age: 25
+        }, {
+          name: "Karolina", age: 26
+        }];
+      });
+</script>

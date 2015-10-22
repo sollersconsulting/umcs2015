@@ -1,0 +1,27 @@
+<script src="../jquery.js"></script>
+<script src="../angular.js"></script>
+<script src="app.js"></script>
+<link rel="stylesheet" href="../foundation.min.css"/>
+
+<div ng-app="invoice" ng-controller="InvoiceController as vm" style="margin-top: 5em;">
+  <div class="row">
+    <div class="small-12 columns">
+      <label>Quantity: <input type="number" min="0" ng-model="vm.qty" required></label>
+    </div>
+    <div class="small-12 columns">
+      <label>Costs: <input type="number" min="0" ng-model="vm.cost" required></label>
+    </div>
+    <div class="small-12 columns">
+      <select ng-model="vm.inCurr" ng-options="c for c in vm.currencies">
+      </select>
+    </div>
+    <h2 class="small-12 columns">Total:</h2>
+    <h3 class="subheader small-12 columns" ng-repeat="c in vm.currencies">
+      {{vm.total(c) | currency:c}}
+    </h3>
+    <div class="small-12 columns">
+      <button class="btn" ng-click="vm.pay()">Pay</button>
+    </div>
+  </div>
+</div>
+

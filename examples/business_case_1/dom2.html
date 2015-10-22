@@ -1,0 +1,15 @@
+﻿<div style="margin-top: 5em;">
+  <form>
+    <input type="text" onkeyup="changeValue(this)"/>
+    <div></div>
+  </form>
+
+
+  <script>
+    'use strict';
+    var changeValue = function (element) {
+      element.nextElementSibling.innerHTML = element.value;
+    }
+  </script>
+</div>
+

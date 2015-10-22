@@ -1,0 +1,15 @@
+<script src="../angular.js"></script>
+
+<div data-ng-app="test" style="margin-top: 5em;">
+    <form data-ng-controller="testController">
+        <div ng-style="{'background-color': color === true ? 'blue' : 'red'}">
+            <button ng-click="color = true">trigger</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    angular.module('test', [])
+            .controller('testController', function ($scope) {
+            });
+</script>

@@ -1,0 +1,69 @@
+<script src="../jquery.js"></script>
+<script src="../angular.js"></script>
+<link rel="stylesheet" href="../foundation.min.css"/>
+
+<div class="row" style="margin-top: 5em;">
+  <!-- DOM -->
+  <div class="small-3 columns">
+    <h3>DOM</h3>
+
+    <form>
+      <input type="text" onkeyup="changeValueDOM(this)"/>
+
+      <div></div>
+      <div></div>
+    </form>
+  </div>
+
+  <!-- BY ID -->
+  <div class="small-3 columns">
+    <h3>ID</h3>
+
+    <form>
+      <input type="text" onkeyup="changeValueByID(this.value)"/>
+
+      <div id="properDivById"></div>
+    </form>
+  </div>
+
+  <!-- JQUERY -->
+  <div class="small-3 columns">
+    <h3>JQUERY</h3>
+
+    <form>
+      <input type="text" onkeyup="changeValueByJquery(this.value)"/>
+
+      <div id="properDivByJQuery"></div>
+    </form>
+  </div>
+
+  <!-- ANGULAR -->
+  <div class="small-3 columns" data-ng-app="test">
+    <h3>ANGULAR</h3>
+
+    <form ng-controller="testController">
+      <input type="text" data-ng-model="model"/>
+
+      <div>{{model}}</div>
+    </form>
+  </div>
+</div>
+
+<script>
+  "use strict";
+  var changeValueByID = function (val) {
+    document.getElementById("properDivById").innerHTML = val;
+  };
+  var clickButtonByID = function (val) {
+    document.getElementById("showthis").style.display = "block";
+  };
+  var changeValueDOM = function (element) {
+    element.nextElementSibling.innerHTML = element.value;
+  };
+  var changeValueByJquery = function (val) {
+    $("#properDivByJQuery").html(val);
+  };
+  angular.module("test", [])
+      .controller("testController", function ($scope) {
+      });
+</script>

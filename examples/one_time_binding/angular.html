@@ -1,0 +1,16 @@
+<script src="../angular.js"></script>
+<link rel="stylesheet" href="../foundation.min.css"/>
+
+<div data-ng-app="test" style="text-align: center; margin-top: 5em;">
+  <form data-ng-controller="testController">
+    <input type="checkbox" data-ng-model="model"/>
+    <div>{{::model}}</div>
+    <div>{{model}}</div>
+  </form>
+</div>
+
+<script>
+  angular.module('test', [])
+      .controller('testController', function ($scope) {
+      });
+</script>

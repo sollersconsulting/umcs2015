@@ -1,0 +1,10 @@
+*.tmp
+.idea
+.project
+bower_components
+node_modules
+prezentacjaBB
+npm-debug.log
+node_modules
+.tmp
+.idea

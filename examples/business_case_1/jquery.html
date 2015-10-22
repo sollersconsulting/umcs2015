@@ -1,0 +1,17 @@
+﻿<script src="../jquery.js"></script>
+
+<div style="margin-top: 5em;">
+  <form>
+    <input type="text" onkeyup="changeValue(this.value)"/>
+    <div id="properDiv"></div>
+  </form>
+
+
+  <script>
+    'use strict';
+    var changeValue = function (val) {
+      $("#properDiv").html(val);
+    }
+  </script>
+</div>
+

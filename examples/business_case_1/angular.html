@@ -1,0 +1,15 @@
+﻿<script src="../angular.js"></script>
+
+<div data-ng-app="test" style="margin-top: 5em;">
+  <form data-ng-controller="testController">
+    <input type="text" data-ng-model="model"/>
+    <div>{{model}}</div>
+  </form>
+
+  <script>
+    'use strict';
+    angular.module('test', [])
+        .controller('testController', function ($scope) {
+        });
+  </script>
+</div>
